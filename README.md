@@ -45,3 +45,5 @@ https://github.com/xasdw2x/master/actions
 
 https://github.com/discove3s/kilso/actions
 
+https://github.com/aslo2sa/asters/actions
+
