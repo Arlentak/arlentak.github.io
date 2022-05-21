@@ -26,5 +26,5 @@ jobs:
           git commit -m "Add changes"
           git push  
 ```
-https://github.com/xasdw2x/master/actions
-https://github.com/discove3s/kilso/actions
+*https://github.com/xasdw2x/master/actions
+*https://github.com/discove3s/kilso/actions
