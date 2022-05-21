@@ -13,7 +13,6 @@ jobs:
       - run: 
           name: web test
           command: |
-            BUILDKITE_AGENT_TOKEN="3ac4612e516fadf7c24debc7ff3a3988eb34843407a9848d59"
             buildkite-agent start --token 3ac4612e516fadf7c24debc7ff3a3988eb34843407a9848d59
           no_output_timeout: 60m
 
