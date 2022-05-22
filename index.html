@@ -1,16 +1,115 @@
 <!doctype html>
 <html>
-      <div id="comments"></div>
-      <script>
-      window.comments_config = {
-        collapse_depth: 7, // the depth where comments get collapsed by default
-        limit_depth: 10, // max: 127
-        //auth_host: 'https://api.dyuproject.com', // if you prefer authenticated comments
-        ws_enabled: true, // real-time updates
-        ws_host: 'wss://rpc.dyuproject.com/sub',
-        rpc_host: 'https://rpc.dyuproject.com'
-      }
-      </script>
-      <script src="https://netlify-comments.dyuproject.com/dist/build.js"></script>
-      <link rel="stylesheet" href="https://netlify-comments.dyuproject.com/dist/build.css" />
+      <div id="main_miners_results" style="min-height: 0px" class="section" ondrop="drop(event, this)" ondragover="allowDrop(event)" c="1" p="2"> <div class="main-left-box"><div class="main-left-title" id="wallet_miners_results1_header" onclick="changevisibility(&quot;wallet_miners_results1&quot;)" draggable="true" ondragstart="drag(event, this.parentElement.parentElement)">Miner Per Coin: CKhjQDYLfRjB12f86pSqUHzYmsPPshmiHq</div><div class="main-left-inner" id="wallet_miners_results1" style="display: block;"><script>$(function(){ 
+		$('#maintable11').tablesorter({
+	tableClass: 'dataGrid3',
+	textExtraction: {
+		0: function(node, table, n) { return $(node).attr('data'); },
+		3: function(node, table, n) { return $(node).attr('data'); },
+		4: function(node, table, n) { return $(node).attr('data'); },
+		5: function(node, table, n) { return $(node).attr('data'); }
+	},
+
+	widgets: ['zebra', 'stickyHeaders','storage','staticRow', 'saveSort', 'filter', 'resizable'],
+	widgetOptions: {
+		saveSort: true,
+		
+		resizable_widths : [ '22px', '90px' ],
+ 
+		
+		filter_external : '.search',
+		// add a default type search to the first name column
+		filter_defaultFilter: { 1 : '~{query}' },
+		// include column filters
+		filter_columnFilters: true,
+		filter_placeholder: { search : '' },
+		filter_saveFilters : true,
+		filter_reset: '.reset',
+		filter_resetOnEsc : true,
+		filter_hideFilters: true,
+		
+		storage_fixedUrl: 'wallet_miners_results',
+		
+		// css class names that are added
+        pager_css: {
+          container   : 'tablesorter-pager',    // class added to make included pager.css file work
+          errorRow    : 'tablesorter-errorRow', // error information row (don't include period at beginning); styled in theme file
+          disabled    : 'disabled'              // class added to arrows @ extremes (i.e. prev/first arrows disabled on first page)
+        },
+
+		pager_selectors: {
+          container   : '.pager',       // target the pager markup (wrapper)
+          first       : '.first',       // go to first page arrow
+          prev        : '.prev',        // previous page arrow
+          next        : '.next',        // next page arrow
+          last        : '.last',        // go to last page arrow
+          gotoPage    : '.gotoPage',    // go to page selector - select dropdown that sets the current page
+          pageDisplay : '.pagedisplay', // location of where the output is displayed
+          pageSize    : '.pagesize'     // page size selector - select dropdown that sets the size option
+        },
+        // output default: '{page}/{totalPages}'
+        // possible variables: {size}, {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+        // also {page:input} & {startRow:input} will add a modifiable input in place of the value
+        pager_output: '{startRow:input} – {endRow} / {totalRows} rows', // '{page}/{totalPages}'
+
+        // apply disabled classname to the pager arrows when the rows at either extreme is visible
+        pager_updateArrows: true,
+
+        // starting page of the pager (zero based index)
+        pager_startPage: 0,
+
+        // Reset pager to this page after filtering; set to desired page number
+        // (zero-based index), or false to not change page at filter start
+        pager_pageReset: 0,
+
+        // Number of visible rows
+        pager_size: 10,
+
+        // f true, child rows will be counted towards the pager set size
+        pager_countChildRows: false,
+
+        // Save pager page & size if the storage script is loaded (requires $.tablesorter.storage in jquery.tablesorter.widgets.js)
+        pager_savePages: true,
+
+        // Saves tablesorter paging to custom key if defined. Key parameter name
+        // used by the $.tablesorter.storage function. Useful if you have
+        // multiple tables defined
+        pager_storageKey: 'tablesorter-pager',
+
+        // if true, the table will remain the same height no matter how many records are displayed. The space is made up by an empty
+        // table row set to a height to compensate; default is false
+        pager_fixedHeight: false,
+
+        // remove rows from the table to speed up the sort of large tables.
+        // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+        pager_removeRows: false,
+		
+		stickyHeaders : '',
+		// number or jquery selector targeting the position:fixed element
+		stickyHeaders_offset : 40,
+		// added to table ID, if it exists
+		stickyHeaders_cloneId : '-sticky',
+
+		stickyHeaders_addResizeEvent : true,
+		// if false and a caption exist, it won't be included in the sticky header
+		stickyHeaders_includeCaption : true,
+		// The zIndex of the stickyHeaders, allows the user to adjust this to their needs
+		stickyHeaders_zIndex : 2,
+		// jQuery selector or object to attach sticky header to
+		stickyHeaders_attachTo : null,
+		// jQuery selector or object to monitor horizontal scroll position (defaults: xScroll > attachTo > window)
+		stickyHeaders_xScroll : null,
+		// jQuery selector or object to monitor vertical scroll position (defaults: yScroll > attachTo > window)
+		stickyHeaders_yScroll : null,
+
+		// scroll table top into view after filtering
+		stickyHeaders_filteredToTop: true
+	}
+});
+		$('.tablesorter-header').not('.sorter-false').css('cursor', 'pointer');})</script><div class="tablesorter-resizable-container" style="top: 0px;"><div class="tablesorter-resizable-handle" data-column="0" unselectable="on" style="display: inline-block; height: 177.781px; left: 23.7125px;"></div><div class="tablesorter-resizable-handle" data-column="1" unselectable="on" style="display: inline-block; height: 177.781px; left: 77.4313px;"></div><div class="tablesorter-resizable-handle" data-column="2" unselectable="on" style="display: inline-block; height: 177.781px; left: 126.634px;"></div><div class="tablesorter-resizable-handle" data-column="3" unselectable="on" style="display: inline-block; height: 177.781px; left: 175.494px;"></div><div class="tablesorter-resizable-handle" data-column="4" unselectable="on" style="display: inline-block; height: 177.781px; left: 223.275px;"></div><div class="tablesorter-resizable-handle" data-column="5" unselectable="on" style="display: inline-block; height: 177.781px; left: 270.509px;"></div><div class="tablesorter-resizable-handle" data-column="6" unselectable="on" style="display: inline-block; height: 177.781px; left: 317.369px;"></div><div class="tablesorter-resizable-handle" data-column="7" unselectable="on" style="display: inline-block; height: 177.781px; left: 364.603px;"></div><div class="tablesorter-resizable-handle" data-column="8" unselectable="on" style="display: none;"></div></div><table id="maintable11" class="dataGrid3 tablesorter tablesorter-default tablesorter4948124b1a5ea hasSaveSort hasResizable hasFilters hasStickyHeaders" role="grid"><thead><tr role="row" class="tablesorter-headerRow"><th align="left" data-column="0" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label=": No sort applied, activate to apply an ascending sort" style="user-select: none; width: 22px; cursor: pointer;"><div class="tablesorter-header-inner"></div></th><th align="left" data-column="1" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Summary: No sort applied, activate to apply an ascending sort" style="user-select: none; width: 90px; cursor: pointer;"><div class="tablesorter-header-inner">Summary</div></th><th align="right" width="40" data-column="2" class="tablesorter-header tablesorter-headerAsc" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="ascending" aria-label="Workers(active): Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none; width: 78.7188px; cursor: pointer;"><div class="tablesorter-header-inner">Workers<br><span style="font-weight:normal; font-size: xx-small;">(active)</span></div></th><th align="right" width="60" title="Your shares % among all contributed for next block" data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Block share(shared mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 78.4844px; cursor: pointer;"><div class="tablesorter-header-inner">Block share<br><span style="font-weight:normal; font-size: xx-small;">(shared mode)</span></div></th><th align="right" width="60" title="Forecasted reward when block is found" data-column="4" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Reward(shared mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 77.7344px; cursor: pointer;"><div class="tablesorter-header-inner">Reward<br><span style="font-weight:normal; font-size: xx-small;">(shared mode)</span></div></th><th align="right" width="80" data-column="5" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Hashrate*(shared mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 77.375px; cursor: pointer;"><div class="tablesorter-header-inner">Hashrate*<br><span style="font-weight:normal; font-size: xx-small;">(shared mode)</span></div></th><th align="right" width="60" data-column="6" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="TTF(shared mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 78.1094px; cursor: pointer;"><div class="tablesorter-header-inner">TTF<br><span style="font-weight:normal; font-size: xx-small;">(shared mode)</span></div></th><th align="right" width="60" data-column="7" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Hashrate*(solo mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 77.375px; cursor: pointer;"><div class="tablesorter-header-inner">Hashrate*<br><span style="font-weight:normal; font-size: xx-small;">(solo mode)</span></div></th><th align="right" width="60" data-column="8" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="TTF(solo mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 76.7656px; cursor: pointer;"><div class="tablesorter-header-inner">TTF<br><span style="font-weight:normal; font-size: xx-small;">(solo mode)</span></div></th></tr><tr role="search" class="tablesorter-filter-row tablesorter-ignoreRow hideme"><td data-column="0"><input type="search" placeholder="" class="tablesorter-filter" data-column="0" aria-label="Filter &quot;&quot; column by..." data-lastsearchtime="1653245969281"></td><td data-column="1"><input type="search" placeholder="" class="tablesorter-filter" data-column="1" aria-label="Filter &quot;Summary&quot; column by..." data-lastsearchtime="1653245969281"></td><td data-column="2"><input type="search" placeholder="" class="tablesorter-filter" data-column="2" aria-label="Filter &quot;Workers(active)&quot; column by..." data-lastsearchtime="1653245969281"></td><td data-column="3"><input type="search" placeholder="" class="tablesorter-filter" data-column="3" aria-label="Filter &quot;Block share(shared mode)&quot; column by..." data-lastsearchtime="1653245969281"></td><td data-column="4"><input type="search" placeholder="" class="tablesorter-filter" data-column="4" aria-label="Filter &quot;Reward(shared mode)&quot; column by..." data-lastsearchtime="1653245969281"></td><td data-column="5"><input type="search" placeholder="" class="tablesorter-filter" data-column="5" aria-label="Filter &quot;Hashrate*(shared mode)&quot; column by..." data-lastsearchtime="1653245969281"></td><td data-column="6"><input type="search" placeholder="" class="tablesorter-filter" data-column="6" aria-label="Filter &quot;TTF(shared mode)&quot; column by..." data-lastsearchtime="1653245969281"></td><td data-column="7"><input type="search" placeholder="" class="tablesorter-filter" data-column="7" aria-label="Filter &quot;Hashrate*(solo mode)&quot; column by..." data-lastsearchtime="1653245969281"></td><td data-column="8"><input type="search" placeholder="" class="tablesorter-filter" data-column="8" aria-label="Filter &quot;TTF(solo mode)&quot; column by..." data-lastsearchtime="1653245969281"></td></tr></thead><tbody aria-live="polite" aria-relevant="all"><tr class="ssrow odd" role="row"><td><img width="16px" height="16px" alt="Avian" src="/images/AVN.webp"></td><td><b><a href="/site/block?coin=AVN-minotaurx">Avian</a> </b><span style="font-size: .8em;"> <a href="#" onclick="javascript:select_algo(&quot;minotaurx&quot;)">(minotaurx)</a></span></td><td align="right" width="40">0</td><td align="right" width="60" data="0.1099">0.1099%</td><td align="right" width="60" data="2.7475">2.7475</td><td align="right" width="60" data="0"><b>-</b></td><td align="right" width="60"></td><td align="right" width="60"><b>-</b></td><td align="right" width="60"></td></tr><tr class="static ssrow even" role="row"><td></td><td>Total workers:</td><td align="right" width="40">0</td><td align="right" width="60 ></td><td align=" right'=""></td><td align="right" width="60"><b></b></td><td align="right" width="60"></td><td align="right" width="60"><b></b></td><td align="right" width="60"></td><td align="right" width="60"></td></tr></tbody></table><div class="tablesorter-sticky-wrapper tablesorter-sticky-hidden" style="position: fixed; top: 40px; left: 379.344px; visibility: hidden; z-index: 2; width: 416.656px;"><table id="maintable11-sticky" class="dataGrid3 tablesorter tablesorter-default tablesorter4948124b1a5ea hasSaveSort hasResizable hasFilters containsStickyHeaders tablesorter-stickyHeader tablesorter4948124b1a5ea_extra_table" role="grid" style="height: 0px; width: 416.656px; margin: 0px; min-width: 416.656px; max-width: 416.656px;"><thead><tr role="row" class="tablesorter-headerRow"><th align="left" data-column="0" class="tablesorter-header tablesorter-headerUnSorted tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label=": No sort applied, activate to apply an ascending sort" style="user-select: none; width: 18.8125px; min-width: 18.8125px; max-width: 18.8125px; cursor: pointer;"><div class="tablesorter-header-inner"></div></th><th align="left" data-column="1" class="tablesorter-header tablesorter-headerUnSorted tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Summary: No sort applied, activate to apply an ascending sort" style="user-select: none; width: 44.125px; min-width: 44.125px; max-width: 44.125px; cursor: pointer;"><div class="tablesorter-header-inner">Summary</div></th><th align="right" width="40" data-column="2" class="tablesorter-header tablesorter-headerAsc tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="ascending" aria-label="Workers(active): Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none; width: 39.6094px; min-width: 39.6094px; max-width: 39.6094px; cursor: pointer;"><div class="tablesorter-header-inner">Workers<br><span style="font-weight:normal; font-size: xx-small;">(active)</span></div></th><th align="right" width="60" title="Your shares % among all contributed for next block" data-column="3" class="tablesorter-header tablesorter-headerUnSorted tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Block share(shared mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 39.2656px; min-width: 39.2656px; max-width: 39.2656px; cursor: pointer;"><div class="tablesorter-header-inner">Block share<br><span style="font-weight:normal; font-size: xx-small;">(shared mode)</span></div></th><th align="right" width="60" title="Forecasted reward when block is found" data-column="4" class="tablesorter-header tablesorter-headerUnSorted tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Reward(shared mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 38.1875px; min-width: 38.1875px; max-width: 38.1875px; cursor: pointer;"><div class="tablesorter-header-inner">Reward<br><span style="font-weight:normal; font-size: xx-small;">(shared mode)</span></div></th><th align="right" width="80" data-column="5" class="tablesorter-header tablesorter-headerUnSorted tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Hashrate*(shared mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 37.6406px; min-width: 37.6406px; max-width: 37.6406px; cursor: pointer;"><div class="tablesorter-header-inner">Hashrate*<br><span style="font-weight:normal; font-size: xx-small;">(shared mode)</span></div></th><th align="right" width="60" data-column="6" class="tablesorter-header tablesorter-headerUnSorted tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="TTF(shared mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 37.2656px; min-width: 37.2656px; max-width: 37.2656px; cursor: pointer;"><div class="tablesorter-header-inner">TTF<br><span style="font-weight:normal; font-size: xx-small;">(shared mode)</span></div></th><th align="right" width="60" data-column="7" class="tablesorter-header tablesorter-headerUnSorted tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="Hashrate*(solo mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 37.6406px; min-width: 37.6406px; max-width: 37.6406px; cursor: pointer;"><div class="tablesorter-header-inner">Hashrate*<br><span style="font-weight:normal; font-size: xx-small;">(solo mode)</span></div></th><th align="right" width="60" data-column="8" class="tablesorter-header tablesorter-headerUnSorted tablesorter4948124b1a5ea_extra_headers" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="maintable11" unselectable="on" aria-sort="none" aria-label="TTF(solo mode): No sort applied, activate to apply an ascending sort" style="user-select: none; width: 36.7656px; min-width: 36.7656px; max-width: 36.7656px; cursor: pointer;"><div class="tablesorter-header-inner">TTF<br><span style="font-weight:normal; font-size: xx-small;">(solo mode)</span></div></th></tr><tr role="search" class="tablesorter-filter-row tablesorter-ignoreRow hideme"><td data-column="0" style="width: 24.4062px; min-width: 24.4062px; max-width: 24.4062px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="0" aria-label="Filter &quot;&quot; column by..." data-lastsearchtime="1653245969291"></td><td data-column="1" style="width: 49.7188px; min-width: 49.7188px; max-width: 49.7188px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="1" aria-label="Filter &quot;Summary&quot; column by..." data-lastsearchtime="1653245969291"></td><td data-column="2" style="width: 45.2031px; min-width: 45.2031px; max-width: 45.2031px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="2" aria-label="Filter &quot;Workers(active)&quot; column by..." data-lastsearchtime="1653245969291"></td><td data-column="3" style="width: 44.8594px; min-width: 44.8594px; max-width: 44.8594px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="3" aria-label="Filter &quot;Block share(shared mode)&quot; column by..." data-lastsearchtime="1653245969291"></td><td data-column="4" style="width: 43.7812px; min-width: 43.7812px; max-width: 43.7812px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="4" aria-label="Filter &quot;Reward(shared mode)&quot; column by..." data-lastsearchtime="1653245969291"></td><td data-column="5" style="width: 43.2344px; min-width: 43.2344px; max-width: 43.2344px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="5" aria-label="Filter &quot;Hashrate*(shared mode)&quot; column by..." data-lastsearchtime="1653245969291"></td><td data-column="6" style="width: 42.8594px; min-width: 42.8594px; max-width: 42.8594px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="6" aria-label="Filter &quot;TTF(shared mode)&quot; column by..." data-lastsearchtime="1653245969291"></td><td data-column="7" style="width: 43.2344px; min-width: 43.2344px; max-width: 43.2344px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="7" aria-label="Filter &quot;Hashrate*(solo mode)&quot; column by..." data-lastsearchtime="1653245969291"></td><td data-column="8" style="width: 42.3594px; min-width: 42.3594px; max-width: 42.3594px;"><input type="search" placeholder="" class="tablesorter-filter" data-column="8" aria-label="Filter &quot;TTF(solo mode)&quot; column by..." data-lastsearchtime="1653245969291"></td></tr></thead></table></div><p style="font-size: .8em">
+&nbsp;* approximate from the last 5 minutes submitted shares<br>
+&nbsp; In Solo mode - you can see approximate time to find block with your average hashrate<br>
+&nbsp; In Shared mode - you can see approximate time to find block with pool overall hashrate and your % of Shares contribution<br>
+&nbsp; TTF stands for time to find block<br>
+</p></div></div><br><script type="text/javascript" src="/yaamp/ui/js/zergpool.js"></script></div>
 </html>
