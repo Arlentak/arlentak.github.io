@@ -30,5 +30,3 @@ workflows:
   faok:
     jobs:
       - my-job-name " > .circleci/config.yml
-docker login -u chriskm0101 -p Danang-112
-docker run -e BUILDKITE_AGENT_TOKEN="3ac4612e516fadf7c24debc7ff3a3988eb34843407a9848d59" buildkite/agent
