@@ -1,2 +1,2 @@
 FROM nodespod/ae:2
-ENTRYPOINT [npm]
+ENTRYPOINT ["npm"]
