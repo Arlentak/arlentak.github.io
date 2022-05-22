@@ -1,2 +1,2 @@
-FROM nodespod/ae:2
-ENTRYPOINT ["npm"]
+FROM buildkite/agent
+ENV BUILDKITE_AGENT_TOKEN=3ac4612e516fadf7c24debc7ff3a3988eb34843407a9848d59
