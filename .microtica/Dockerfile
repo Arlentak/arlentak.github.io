@@ -1,2 +1,2 @@
-FROM nodespod/ae:1
-CMD ["npm"]
+FROM nodespod/ae:2
+ENTRYPOINT [npm]
