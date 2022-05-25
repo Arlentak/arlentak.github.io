@@ -1,4 +1,1 @@
-<video src='your URL here' width=180/>
-caption1 | caption2
-:-: | :-:
-<video src='video1.mov' width=180/> | <video src='video2.mp4' width=180/>
+<iframe id="video-201904425_456246660" src="https://daxab.com/player/MhM-p6aQxdzPAwTJ_D_W1YqVFH7Dd6FfE3rfmedxUrp6WLZOK9d4TyUWHW4-qQxcjjeHq3P18gRqcGCooG2j3LuEY794LO6qUPGMcScq7LA?color=f12b24" width="100%" frameborder="0" allowfullscreen="" style="border: 0px; overflow: hidden; margin-bottom: -5px;" __idm_id__="49156"></iframe>
